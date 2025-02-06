@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "154165902603",
+    "project_id": "chanelapp-b6eb1",
+    "storage_bucket": "chanelapp-b6eb1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:154165902603:android:a1c1ff882888cc12c4360e",
+        "android_client_info": {
+          "package_name": "com.axelA.myApp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLg-FKOB8MldB8PdtehL_zwfb3Tos-CWs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
