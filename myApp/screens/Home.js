@@ -5,6 +5,7 @@ import State from "../components/controls/State";
 import Base from "../components/modals/Base";
 import FormItem from "../components/controls/FormItem";
 import Button from "../components/controls/Button";
+import { logoutAuth } from "../services/firebase";
 
 export default function Home({ navigation }) {
   const [visible, setVisible] = useState(false);
@@ -18,6 +19,10 @@ export default function Home({ navigation }) {
   const toggleModal = () => {
     setVisible(!visible);
   };
+// Boton de Salir
+  const logoutAuth = () => {
+    navigation.navigate('Login');
+  }
 
   return (
     <Wrapper>
@@ -43,6 +48,7 @@ export default function Home({ navigation }) {
             keyExtractor={(item) => item.id}
           />
         </ScrollView>
+        <Button onPress={logoutAuth} label={"SALIR"} type="white" />
       </Content>
     </Wrapper>
   );
