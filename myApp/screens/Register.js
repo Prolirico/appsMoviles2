@@ -1,7 +1,11 @@
-import { useState } from "react";
-import { Content, Wrapper, Title, Logo } from "../components/layout";
+import { Alert } from "react-native";
+import { getAuth } from "firebase/auth";
+import { useState, useEffect } from "react";
+import { setDoc,doc, onSnapshot } from "firebase/firestore";
 import FormItem from "../components/controls/FormItem";
 import Button from "../components/controls/Button";
+import { Content, Wrapper, Title, Logo } from "../components/layout";
+
 import { registerEmailPass } from "../services/firebase";
 
 export default function Register({ navigation }) {
@@ -24,6 +28,8 @@ export default function Register({ navigation }) {
                 email: "",
                 full_name: "",
                 password: "",
+                phone: "",
+                age: "",
             });
             setLoading(false);
             navigation.navigate("Login");
@@ -45,13 +51,34 @@ export default function Register({ navigation }) {
                         setUser((prev) => ({ ...prev, email: value.trim() }))
                     }
                 ></FormItem>
+
                 <FormItem
                     value={user.full_name}
                     label="Nombre completo"
                     onChange={(value) =>
                         setUser((prev) => ({ ...prev, full_name: value }))
                     }
-                ></FormItem>
+                >
+                </FormItem>
+
+                <FormItem
+                    value={user.phone}
+                    label="Telefono"
+                    onChange={(value) =>
+                        setUser((prev) => ({ ...prev, phone: value }))
+                    }
+                >
+                </FormItem>
+
+                <FormItem
+                    value={user.age}
+                    label="Edad"
+                    onChange={(value) =>
+                        setUser((prev) => ({ ...prev, age: value }))
+                    }
+                >
+                </FormItem>
+
                 <FormItem
                     secure={true}
                     label="Contraseña"
@@ -60,6 +87,7 @@ export default function Register({ navigation }) {
                         setUser((prev) => ({ ...prev, password: value.trim() }))
                     }
                 ></FormItem>
+
                 <Button onPress={registerUser} label={"REGISTRARME"} isLoading={loading} />
                 <Button onPress={goToLogin} label={"INICIAR SESIÓN"} />
             </Content>
