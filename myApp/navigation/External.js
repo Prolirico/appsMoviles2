@@ -1,8 +1,10 @@
-import {createNativeStackNavigator}from '@react-navigation/native-stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+const Stack = createNativeStackNavigator();
+
 import Login from '../screens/Login';
 import Welcome from '../screens/Welcome';
 import Register from '../screens/Register';
-const Stack = createNativeStackNavigator();
 
 export default function External() {
   return (
@@ -23,6 +25,5 @@ export default function External() {
         options={{ headerShown: false }}
       />
     </Stack.Navigator>
-    
-  );
+  )
 }

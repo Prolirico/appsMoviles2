@@ -1,7 +1,6 @@
 import { Content, Wrapper, Title, Logo } from '../components/layout';
 import Button from '../components/controls/Button';
 import Colors from '../constants/Colors';
-import { logoutAuth } from '../services/firebase';
 
 export default function Welcome({ navigation }) {
   const goToLogin = () => {
